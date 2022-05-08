@@ -1,5 +1,7 @@
 import { Tarjeta, BlogPost} from './Tarea1.js';
 import { MatchNombre, PasswordInput, ValidationInput} from './Tarea2.js';
+import { UncontrolledCheckbox, CheckboxList } from './Tarea3.js';
+import { CheckboxListWithState } from './Tarea4.js';
 
 export function Tareas(props) {
   return (
@@ -30,7 +32,34 @@ export function Tareas(props) {
         isPassword={true}
         validation={(value) => value.length >= 8}
       />
+      <UncontrolledCheckbox
+        name='uno'
+        initialValue={false}
+      />
+      <CheckboxList
+        items={{
+          uno: false,
+          dos: true,
+          tres: false,
+        }}
+      />
 
+      <CheckboxList
+        items={{
+          uno: false,
+          dos: true,
+          tres: false,
+        }}
+      />
+      <CheckboxListWithState
+        items={{
+          uno: false,
+          dos: true,
+          tres: false,
+        }}
+      />
+
+    
     </>
 );
 }
