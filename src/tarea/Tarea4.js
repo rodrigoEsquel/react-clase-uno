@@ -6,7 +6,18 @@
  * onChange es una función que se debe disparar cuando el checkbox se selecciona.
  */
 
-export function ControlledCheckbox(props) {}
+export function ControlledCheckbox(props) {
+  return (
+    <>
+	    <input type="checkbox" 
+    	  onChange={props.onChange}
+	      checked={props.value}
+	      name={props.name}
+	    />
+   	  <span>{props.name}</span>
+	  </>
+  );
+}
 
 /*
  * Este componente debe renderizar una lista de componentes ControlledCheckbox.
@@ -29,7 +40,25 @@ export function ControlledCheckbox(props) {}
  * }
  */
 
-export function CheckboxListWithState(props) {}
+export function CheckboxListWithState(props) {
+  const [state, setState] = React.useState(props.items);
+  return (
+    <div>      
+    	{Object.entries(state).map((element) => {
+	      return <ControlledCheckbox
+          name={element[0]}
+          key={element[0]}
+          value={element[1]}
+          onChange={() => {
+            setState({...state, [element[0]]: !element[1]})
+          }}
+        />
+	    })}  
+	  </div>
+  );
+}
+
+
 
 /*
  * Para este punto, seguramente hayan notado las palabras "Controlled" y
