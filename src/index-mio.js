@@ -1,18 +1,8 @@
-import { Tarjeta, BlogPost} from './tarea/Tarea1.js';
+import {Tareas} from './tarea/Tareas.js';
 
 //ReactDOM.render(<Tarjeta nombre="Rodrigo Fernandez" titulo="Programador Front End" imagen="https://avatars.githubusercontent.com/u/88414096?v=4" />, document.getElementById('react-app'));
 
-ReactDOM.render(<BlogPost
-  titulo="Ardillas"
-  parrafos={`Hoy vi una ardilla.
-La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y encima andaba siempre en cuatro patas, moviendo la cola.
-Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
-  autor={{
-    nombre: "Rodrigo Fernadez",
-    titulo: "Progamador Front End",
-    imagen: "https://avatars.githubusercontent.com/u/88414096?v=4"
-  }}
-/>, document.getElementById('react-app'));
+ReactDOM.render(<Tareas/>, document.getElementById('react-app'));
 
 
 // import { Button } from './components/Button.js';
